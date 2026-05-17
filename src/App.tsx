@@ -75,7 +75,7 @@ export default function App() {
 
       {/* Audio */}
       <audio ref={audioRef} loop>
-        <source src="/clearing.mp3" type="audio/mpeg" />
+        <source src="public/clearing.mp3" type="audio/mpeg" />
       </audio>
     </div>
   );
