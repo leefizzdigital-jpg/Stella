@@ -70,7 +70,7 @@ export default function App() {
 
       {/* Placeholder Audio element */}
       <audio ref={audioRef} loop>
-        <source src="public/Clearing.mp3" type="audio/mpeg" />
+        <source src="public/clearing.mp3" type="audio/mpeg" />
       </audio>
     </div>
   );
