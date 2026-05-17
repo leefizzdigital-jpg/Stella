@@ -21,11 +21,15 @@ export default function App() {
 
     if (isPlaying) {
       audioRef.current.pause();
+      setIsPlaying(false);
     } else {
-      audioRef.current.play();
+      audioRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch(err => {
+        console.warn("Audio playback aborted:", err);
+        setIsPlaying(false);
+      });
     }
-
-    setIsPlaying(!isPlaying);
   };
 
   return (
@@ -75,7 +79,7 @@ export default function App() {
 
       {/* Audio */}
       <audio ref={audioRef} loop>
-        <source src="public/clearing.mp3" type="audio/mpeg" />
+        <source src="/clearing.mp3" type="audio/mpeg" />
       </audio>
     </div>
   );

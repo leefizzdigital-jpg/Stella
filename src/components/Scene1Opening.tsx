@@ -5,6 +5,19 @@ import { useState, useRef, useEffect } from 'react';
 
 export default function Scene1Opening() {
   const [showVideo, setShowVideo] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((err) => {
+        console.warn("Autoplay aborted or not allowed:", err);
+        if (videoRef.current) {
+          videoRef.current.muted = true;
+          videoRef.current.play().catch(console.error);
+        }
+      });
+    }
+  }, []);
 
   // If video naturally ends, hide it
   const handleVideoEnded = () => {
@@ -21,12 +34,12 @@ export default function Scene1Opening() {
             transition={{ duration: 1 }}
           >
             <video 
-              autoPlay 
+              ref={videoRef}
               playsInline 
               className="w-full h-full object-cover"
               onEnded={handleVideoEnded}
             >
-              <source src="public/Clearing.mp4" type="video/mp4" />
+              <source src="/Clearing.mp4" type="video/mp4" />
             </video>
             <button 
               onClick={() => setShowVideo(false)}
