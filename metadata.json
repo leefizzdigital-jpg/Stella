@@ -1,0 +1,6 @@
+{
+  "name": "Stella's Birthday Adventure",
+  "description": "A premium cinematic interactive mobile story for Stella's Birthday Party.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
