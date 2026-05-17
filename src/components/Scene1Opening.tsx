@@ -26,7 +26,7 @@ export default function Scene1Opening() {
               className="w-full h-full object-cover"
               onEnded={handleVideoEnded}
             >
-              <source src="public/Clearing.mp4" type="video/mp4" />
+              <source src="/Clearing.mp4" type="video/mp4" />
             </video>
             <button 
               onClick={() => setShowVideo(false)}

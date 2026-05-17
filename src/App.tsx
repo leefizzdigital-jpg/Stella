@@ -70,7 +70,7 @@ export default function App() {
 
       {/* Placeholder Audio element */}
       <audio ref={audioRef} loop>
-        <source src="https://cdn.pixabay.com/download/audio/2022/02/07/audio_1ab7da89f2.mp3?filename=magical-fairy-tale-112349.mp3" type="audio/mpeg" />
+        <source src="public/clearing.mp3" type="audio/mpeg" />
       </audio>
     </div>
   );
